@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kube-events-maker-cfg
+  namespace: kube-events-maker
+data:
+  config.yaml: |
+    kubeconfig: ""
+    masterURL: ""
+    namespace: ""
