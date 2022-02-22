@@ -8,7 +8,10 @@ But in practice, we always see the below Event. It tells us nothing except the P
 Warning  BackOff  3m6s (x3808 over 17h)  kubelet   Back-off restarting failed container
 ```
 
-Actually, the Pod's status field has some information about the Pod, but it is transient. So my motivation is wathing the Pod's status filed, and make the custom Event to tell users why the Pod terminated. The custom Event likes below, it tell us the Pod fterminated because of OOMKilled. **The code is simple, you are free to see how it achieves.**
+Actually, the Pod's status field has some information about the Pod, but it is transient. So my motivation is wathing the Pod's status filed, and make the custom Event to tell users why the Pod terminated. 
+
+# effect
+The custom Event likes below, it tell us the Pod fterminated because of OOMKilled. **The code is simple, you are free to see how it achieves： https://github.com/HeGaoYuan/kube-events-maker/blob/master/pkg/kube/watch_pod.go.**
 
 ```
 Warning  ContainerTerminatedOOMKilled  51s   kube-events-maker   demo container exits(137) for OOMKilled reason
